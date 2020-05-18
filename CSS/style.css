@@ -1,14 +1,15 @@
 .ontwerp{
   width: 1200px;
   height: 1200px;
-
 }
 
 .groot{
+  transform-origin: center;
   transform: scale(1.2);
+  transition: all 1s ease;
 }
 
-#Red_Polygon:hover{
-  margin-left: 3em;
-  color: #00000;
+.kleur{
+  padding-left: 3em;
+  fill: #000000;
 }
