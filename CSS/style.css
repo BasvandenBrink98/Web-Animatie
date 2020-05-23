@@ -1,15 +1,53 @@
 .ontwerp{
-  width: 1200px;
-  height: 1200px;
+  width: 40vw;
+  height: 40vh;
+  margin: auto;
+  margin-top: 2em;
+
+
 }
 
-.groot{
+/* .groot{
   transform-origin: center;
   transform: scale(1.2);
   transition: all 1s ease;
-}
+} */
 
 .kleur{
   padding-left: 3em;
   fill: #000000;
+}
+
+.Red_circle_active{
+  animation: rotate 5s linear infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.Blue_Polygon_animation{
+  animation: move 1.2s ease-in-out;
+  animation-delay: 2s;
+  
+}
+
+@keyframes move {
+  from {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateX(0px);
+    opacity: 1;
+  }
+}
+
+
+#bttn{
+  z-index: 20;
 }
