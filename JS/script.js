@@ -5,6 +5,8 @@ function groot(){
   document.getElementById('Red_circle').classList.toggle('Red_circle_active');
   console.log("groot");
   document.getElementById('Blue_Polygon').classList.toggle('Blue_Polygon_animation');
+  document.getElementById('Red_Polygon').classList.toggle('Red_Polygon_animation');
+  document.getElementById('Green_Polygon').classList.toggle('Green_Polygon_animation');
   console.log("red circle Red_circle_active");
 }
 

@@ -1,10 +1,12 @@
+body{
+  margin: 0;
+}
+
 .ontwerp{
-  width: 40vw;
-  height: 40vh;
-  margin: auto;
-  margin-top: 2em;
-
-
+  width: 100vw;
+  height: 100vh;
+  /* margin: auto; */
+  mix-blend-mode: ;
 }
 
 /* .groot{
@@ -19,26 +21,46 @@
 }
 
 .Red_circle_active{
-  animation: rotate 5s linear infinite;
+  animation: rotate 3s ease-in-out;
+  animation-iteration-count: 1;
   transform-box: fill-box;
   transform-origin: center;
 }
 
 @keyframes rotate {
   from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+  to { transform: rotate(1080deg); }
 }
 
 .Blue_Polygon_animation{
-  animation: move 1.2s ease-in-out;
-  animation-delay: 2s;
-  
+  animation: move 1.6s ease-in-out;
+}
+
+.Red_Polygon_animation{
+  animation: move 1.8s ease-in-out;
+}
+
+.Green_Polygon_animation{
+  animation: move 2s ease-in-out;
 }
 
 @keyframes move {
   from {
+    opacity: 1;
+  }
+
+  10% {
+    opacity: 0;
+    transform: translateX(0px);
+  }
+
+  50% {
     transform: translateX(-1000px);
     opacity: 0;
+  }
+
+  60%{
+    opacity: 1;
   }
 
   to {
@@ -49,5 +71,5 @@
 
 
 #bttn{
-  z-index: 20;
+  /* z-index: 20; */
 }
