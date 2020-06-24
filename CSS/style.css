@@ -78,6 +78,9 @@ body{
   animation: BG_circle 1s ease infinite;
 }
 
+.startAnimation:hover{
+  cursor: pointer;
+}
 
 .normal{
   transform: scale(1);
@@ -153,6 +156,11 @@ body{
   font-size: 2em;
   color: #EBD259;
   border: none;
+}
+
+#bttn:hover{
+  cursor: pointer;
+
 }
 
 .bttnAnimation{
