@@ -1,7 +1,11 @@
+/* gewone styles */
+
 body{
   margin: 0;
   overflow: hidden;
-  /* background-color: #d8d7d4; */
+  background-image: url(../img/texture.jpg);
+  background-color: #b3b29a;
+  background-blend-mode: overlay;
 }
 
 .ontwerp{
@@ -10,49 +14,140 @@ body{
   margin: -4em auto auto auto;
 }
 
+#BG_vlak{
+  fill: none;
+  opacity: 0;
+}
 
-#BG_circle  {
-  width: 100vw;
-  height: 100vh;
+#TekstVerticaal{
+  opacity: 0;
+}
+
+/*Begin animatie*/
+
+.startAnimation{
+  transform: scale(0.1);
+  transform-origin: center;
+  animation: BG_circle 1s ease infinite;
 }
 
 
-.kleur{
-  padding-left: 3em;
-  fill: #000000;
+.normal{
+  transform: scale(1);
+  transform-origin: center;
+  animation: none
 }
+
+@keyframes BG_circle{
+  from{
+    transform: scale(0.1);
+    transform-origin: center;
+  }
+
+  50% {
+    transform: scale(0.12);
+    transform-origin: center;
+  }
+
+  to{
+    transform: scale(0.1);
+    transform-origin: center;
+  }
+}
+
+/*Rode cirkel animatie na eerste klik*/
+
+.Red_circle_rotate{
+  animation: Red_circle_rotation 2s linear infinite;
+}
+
+.Red_circle_scale{
+  animation: Red_circle_scale 1s ease forwards;
+
+}
+@keyframes Red_circle_rotation {
+  from{
+    transform: rotate(0deg);
+    transform-origin: center;
+  }
+
+  to{
+    transform:  rotate(360deg);
+    transform-origin: center;
+  }
+
+}
+
+@keyframes Red_circle_scale{
+  from{
+    transform: scale(0);
+    transform-origin: center;
+  }
+
+  to{
+    transform: scale(0.2);
+    transform-origin: center;
+  }
+}
+
+/*Animatie na klik op de start knop*/
+
+.BG_circleToNormal{
+  animation: BG_circleToNormal 3.2s ease-in-out forwards;
+}
+
+@keyframes BG_circleToNormal{
+  from{
+    transform: scale(0.1);
+    transform-origin: center;
+  }
+  to{
+  transform: scale(1);
+  transform-origin: center;
+    }
+}
+
+/*Draaiende rode cirkel*/
 
 .Red_circle_active{
-  animation: rotate 3s ease-in-out;
+  animation: rotate 4s ease-in-out;
   animation-iteration-count: 1;
   transform-box: fill-box;
   transform-origin: center;
 }
 
 @keyframes rotate {
-  from { transform: rotate(0deg); }
-  80% { transform: rotate(1130deg); }
-  to { transform: rotate(1080deg); }
+  from {
+    transform: scale(0.2) rotate(0deg);
+  }
+  80% {
+    transform: scale(1) rotate(750deg);
+  }
+  to {
+    transform: rotate(720deg);
+  }
 }
+
+/*Polygons van links naar rechts in beeld*/
 
 .outOfView{
   transform: translateX(-1000px);
 }
 
 .Blue_Polygon_animation{
-  animation: move 1.2s ease-in-out;
+  animation: move 1.8s ease-in-out;
 }
 
 .Red_Polygon_animation{
-  animation: move 1.4s ease-in-out;
+  animation: move 2s ease-in-out;
 }
 
 .Green_Polygon_animation{
-  animation: move 1.6s ease-in-out;
+  animation: move 2.2s ease-in-out;
 }
 
 .Yellow_Polygon_animation{
-  animation: moveYellow 3s ease-in-out;
+  animation: moveYellow 4s ease-in-out;
 }
 
 
@@ -80,7 +175,6 @@ body{
     opacity: 1;
   }
 
-
   80% {
     transform: rotate(30deg);
     transform-origin: center;
@@ -92,6 +186,7 @@ body{
   }
 }
 
+/*Letter animaties*/
 
 .letterAnimatie:nth-of-type(1){
   animation: tekst 0.5s ease-in-out;
@@ -125,15 +220,24 @@ body{
 }
 
 .letterAnimatie:nth-of-type(7){
-  animation: tekst 1.7s ease-in-out;
-  opacity: 1;
-}
-
-.letterAnimatie:nth-of-type(8){
   animation: tekst 1.9s ease-in-out;
   opacity: 1;
 }
 
+.letterAnimatie:nth-of-type(8){
+  animation: tekst 2.1s ease-in-out;
+  opacity: 1;
+}
+
+.cirkel{
+  opacity: 0;
+}
+
+
+.cirkelAnimatie{
+  animation: tekst 1.7s ease-in-out;
+  opacity: 1;
+}
 
 .letter{
   opacity: 0;
@@ -159,4 +263,41 @@ body{
 
 .hidden{
   opacity: 0;
+}
+
+#blackCircle{
+  fill: #0e0d09;
+}
+
+#hiddenCirclePart{
+  opacity: 0;
+}
+
+/*Media queries*/
+@media (max-width: 414px) {
+
+  #Tekst{
+    opacity: 0;
+  }
+
+  #TekstVerticaal{
+    opacity: 1;
+    /* transform: translatex(-30) translateY(-30); */
+
+  }
+
+  .ontwerp{
+    position: relative;
+    width: 100vw;
+    height: auto;
+    margin: 15em auto auto auto;
+    transform: rotate(90deg) scale(1.8);
+    transform-origin: center;
+    z-index: 0;
+  }
+
+  #bttn{
+    position: relative;
+    z-index: 1;
+  }
 }
