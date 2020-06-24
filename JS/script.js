@@ -5,11 +5,13 @@ function redCircleStart(){
   document.getElementById('extraAnimatie').classList.add('Red_circle_scale');
   document.getElementById('Red_circle').classList.remove('hidden');
   document.getElementById('bttn').classList.remove('hidden');
+  document.getElementById('bttn').classList.add('bttnAnimation');
+
 }
 
-
-
 document.getElementById('bttn').addEventListener("click", start);
+document.getElementById('bttn').addEventListener("click", instruction);
+
 
 function start(){
   document.getElementById('BG_circle').classList.add('BG_circleToNormal');
@@ -27,7 +29,30 @@ function start(){
   document.getElementById('Yellow_Polygon').classList.remove('outOfView');
   document.getElementById('instruction').classList.remove('hidden');
   document.getElementById('BG_circle').classList.add('normal');
-  }
+  document.getElementById('bttn').classList.remove('bttnAnimation');
+  document.getElementById('bttn').classList.add('hidden');
+
+
+
+}
+
+  //code (regels 32 t/m 42) van: https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener
+
+// var mql = window.matchMedia("(max-width: 420px)");
+// console.log(mql);
+//
+// function instruction(e){
+//   if (e.matches) { // scherm is kleiner dan 420px
+//     document.getElementById('instructionMobile').classList.remove('hidden');
+//     console.log("mobile");
+//   } else { //scherm is groter dan 420px
+//     document.getElementById('instruction').classList.remove('hidden');
+//   }
+// }
+//
+// mql.addListener(instruction);
+
+
 
 
 window.addEventListener("keydown", keyEvents);
@@ -37,28 +62,16 @@ function keyEvents(e){
     console.log("keydown");
     document.querySelectorAll('.letter').forEach(element => element.classList.add('letterAnimatie'));
     document.getElementById('blackCircle').classList.add('cirkelAnimatie');
+    document.getElementById('instruction').classList.add('hidden');
     }
   }
 
 document.getElementById('Yellow_Polygon').addEventListener('dblclick', tekstMobile);
+document.getElementById('Yellow_Polygon').addEventListener('click', tekstMobile);
+
 
 function tekstMobile(){
   document.querySelectorAll('.letter').forEach(element => element.classList.add('letterAnimatie'));
   document.getElementById('blackCircleVertical').classList.add('cirkelAnimatie');
+  document.getElementById('instruction').classList.add('hidden');
 }
-
-
-
-    // function myFunction(x) {
-    //   if (x.matches) { // If media query matches
-    //     document.getElementById('blackCircleVertical').classList.add('cirkelAnimatie');
-    //   } else {
-    //     document.getElementById('blackCircle').classList.add('cirkelAnimatie');
-    //   }
-    // }
-    //
-    // var x = window.matchMedia("(max-width: 420px)")
-    // myFunction(x) // Call listener function at run time
-    // x.addListener(myFunction) // Attach listener function on state changes
-    //
-    // }

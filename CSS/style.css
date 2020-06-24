@@ -19,8 +19,55 @@ body{
   opacity: 0;
 }
 
+#Tekst{
+  opacity: 1;
+}
+
 #TekstVerticaal{
   opacity: 0;
+}
+
+.differentContent::before{
+  content: "Press 't' for text";
+  font-family: helvetica, sans-serif;
+  font-size: 2em;
+  position: absolute;
+  left: 4em;
+  bottom: 2em;
+  width: 10em;
+  height: 1.5em;
+  margin: auto;
+  background-color: #0e0d09;
+  font-family: helvetica, sans-serif;
+  color: #EBD259;
+  border: none;
+  text-align: center;
+  align-self: center;
+  padding-top: 0.4em;
+
+
+}
+
+.instructionAnimation{
+  animation: txt 0.5s ease-in-out forwards;
+}
+
+@keyframes txt{
+  from{
+    transform: translateX(-300px);
+    transform-origin: center;
+  }
+
+  80%{
+    transform: translateX(50px);
+    transform-origin: center;
+  }
+
+  to{
+    transform: translateX(0px);
+    transform-origin: center;
+  }
+
 }
 
 /*Begin animatie*/
@@ -62,7 +109,7 @@ body{
 }
 
 .Red_circle_scale{
-  animation: Red_circle_scale 1s ease forwards;
+  animation: Red_circle_scale 0.5s ease forwards;
 
 }
 @keyframes Red_circle_rotation {
@@ -86,6 +133,48 @@ body{
 
   to{
     transform: scale(0.2);
+    transform-origin: center;
+  }
+}
+
+#bttn{
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  bottom: 8em;
+  text-align: center;
+  width: 6em;
+  height: 2em;
+  margin: auto;
+  background-color: #0e0d09;
+  font-family: helvetica, sans-serif;
+  font-size: 2em;
+  color: #EBD259;
+  border: none;
+}
+
+.bttnAnimation{
+  animation: bttn 0.3s ease forwards;
+}
+
+@keyframes bttn{
+  from{
+    opacity: 0;
+    transform: scale(0);
+    transform-origin: center;
+  }
+
+  80%{
+    opacity: 1;
+    transform: scale(1.1);
+    transform-origin: center;
+  }
+
+  to{
+    opacity: 1;
+    transform: scale(1);
     transform-origin: center;
   }
 }
@@ -135,11 +224,11 @@ body{
 }
 
 .Blue_Polygon_animation{
-  animation: move 1.8s ease-in-out;
+  animation: move 1.2s ease-in-out;
 }
 
 .Red_Polygon_animation{
-  animation: move 2s ease-in-out;
+  animation: move 1.6s ease-in-out;
 }
 
 .Green_Polygon_animation{
@@ -154,6 +243,10 @@ body{
 @keyframes move {
   from {
     transform: translateX(-1000px);
+    opacity: 0;
+  }
+
+  40% {
     opacity: 0;
   }
 
@@ -283,8 +376,19 @@ body{
   #TekstVerticaal{
     opacity: 1;
     /* transform: translatex(-30) translateY(-30); */
+  }
+
+  .differentContent::before{
+    content: "Tap the yellow area for text";
+    font-size: 1.3em;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 3em;
+    height: 2.6em;
+    left: 5em;
 
   }
+
 
   .ontwerp{
     position: relative;
@@ -297,7 +401,10 @@ body{
   }
 
   #bttn{
-    position: relative;
+    position: absolute;
     z-index: 1;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 4em;
   }
 }
