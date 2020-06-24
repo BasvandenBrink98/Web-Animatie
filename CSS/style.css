@@ -1,19 +1,21 @@
 body{
   margin: 0;
+  overflow: hidden;
+  /* background-color: #d8d7d4; */
 }
 
 .ontwerp{
   width: 100vw;
   height: 100vh;
-  /* margin: auto; */
-  mix-blend-mode: ;
+  margin: -4em auto auto auto;
 }
 
-/* .groot{
-  transform-origin: center;
-  transform: scale(1.2);
-  transition: all 1s ease;
-} */
+
+#BG_circle  {
+  width: 100vw;
+  height: 100vh;
+}
+
 
 .kleur{
   padding-left: 3em;
@@ -29,38 +31,35 @@ body{
 
 @keyframes rotate {
   from { transform: rotate(0deg); }
+  80% { transform: rotate(1130deg); }
   to { transform: rotate(1080deg); }
 }
 
+.outOfView{
+  transform: translateX(-1000px);
+}
+
 .Blue_Polygon_animation{
-  animation: move 1.6s ease-in-out;
+  animation: move 1.2s ease-in-out;
 }
 
 .Red_Polygon_animation{
-  animation: move 1.8s ease-in-out;
+  animation: move 1.4s ease-in-out;
 }
 
 .Green_Polygon_animation{
-  animation: move 2s ease-in-out;
+  animation: move 1.6s ease-in-out;
 }
+
+.Yellow_Polygon_animation{
+  animation: moveYellow 3s ease-in-out;
+}
+
 
 @keyframes move {
   from {
-    opacity: 1;
-  }
-
-  10% {
-    opacity: 0;
-    transform: translateX(0px);
-  }
-
-  50% {
     transform: translateX(-1000px);
     opacity: 0;
-  }
-
-  60%{
-    opacity: 1;
   }
 
   to {
@@ -69,7 +68,95 @@ body{
   }
 }
 
+@keyframes moveYellow {
+  from {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
 
-#bttn{
-  /* z-index: 20; */
+  60% {
+    transform: translateX(0px) rotate(0deg);
+    transform-origin: center;
+    opacity: 1;
+  }
+
+
+  80% {
+    transform: rotate(30deg);
+    transform-origin: center;
+  }
+
+  to {
+    transform: rotate(0deg);
+    transform-origin: center;
+  }
+}
+
+
+.letterAnimatie:nth-of-type(1){
+  animation: tekst 0.5s ease-in-out;
+  opacity: 1;
+
+}
+
+.letterAnimatie:nth-of-type(2){
+  animation: tekst 0.7s ease-in-out;
+  opacity: 1;
+}
+
+.letterAnimatie:nth-of-type(3){
+  animation: tekst 0.9s ease-in-out;
+  opacity: 1;
+}
+
+.letterAnimatie:nth-of-type(4){
+  animation: tekst 1.1s ease-in-out;
+  opacity: 1;
+}
+
+.letterAnimatie:nth-of-type(5){
+  animation: tekst 1.3s ease-in-out;
+  opacity: 1;
+}
+
+.letterAnimatie:nth-of-type(6){
+  animation: tekst 1.5s ease-in-out;
+  opacity: 1;
+}
+
+.letterAnimatie:nth-of-type(7){
+  animation: tekst 1.7s ease-in-out;
+  opacity: 1;
+}
+
+.letterAnimatie:nth-of-type(8){
+  animation: tekst 1.9s ease-in-out;
+  opacity: 1;
+}
+
+
+.letter{
+  opacity: 0;
+}
+
+@keyframes tekst{
+  from{
+    opacity: 0;
+  }
+
+  70% {
+    transform: scale(1.1);
+    transform-origin: center;
+    opacity: 0;
+  }
+
+  to{
+    transform: scale(1);
+    transform-origin: center;
+    opacity: 1;
+  }
+}
+
+.hidden{
+  opacity: 0;
 }
