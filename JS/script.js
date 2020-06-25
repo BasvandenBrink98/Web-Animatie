@@ -32,11 +32,10 @@ function start(){
   document.getElementById('bttn').classList.remove('bttnAnimation');
   document.getElementById('bttn').classList.add('hidden');
 
-
-
 }
 
-  //code (regels 32 t/m 42) van: https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener
+//Geprobeerd om door window.watchMedia de goede class te verwijderen, maar niet gelukt via JS. Wel via CSS
+//code (regels 40 t/m 52) van: https://developer.mozilla.org/en-US/docs/Web/API/MediaQueryList/addListener
 
 // var mql = window.matchMedia("(max-width: 420px)");
 // console.log(mql);
@@ -51,8 +50,6 @@ function start(){
 // }
 //
 // mql.addListener(instruction);
-
-
 
 
 window.addEventListener("keydown", keyEvents);
